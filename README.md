@@ -11,3 +11,14 @@ Check container status:
 ```
 docker ps -a
 ```
+
+
+If there is a problem to make a frontend work, and error is similar to ```Node.js 17.0.1 Gatsby error - "digital envelope routines::unsupported ... ERR_OSSL_EVP_UNSUPPORTED" [duplicate]```   try to edit package.json:
+```
+  "scripts": {
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build"
+  },
+  ```
+  
+  link: https://stackoverflow.com/questions/69665222/node-js-17-0-1-gatsby-error-digital-envelope-routinesunsupported-err-os
